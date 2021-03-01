@@ -1,5 +1,5 @@
 from tensorflow import keras
-
+import tensorflow as tf
 
 def create_model(img_size=(160, 160, 3)):
     base_model = keras.applications.MobileNetV2(
@@ -18,5 +18,10 @@ def create_model(img_size=(160, 160, 3)):
     model = keras.Model(inputs, outputs)
 
     model.summary()
+
+    base_learning_rate = 0.0001
+    model.compile(optimizer=tf.keras.optimizers.Adam(lr=base_learning_rate),
+                  loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),
+                  metrics=['accuracy'])
 
     return model
