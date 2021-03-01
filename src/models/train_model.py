@@ -83,7 +83,6 @@ def plot_confusion_matrix(cm,
 
     """
 
-
     accuracy = np.trace(cm) / float(np.sum(cm))
     misclass = 1 - accuracy
 
