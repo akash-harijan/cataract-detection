@@ -26,4 +26,9 @@ python src/models/predict_model.py
 It will predict whether given image of eye is a normal eye or it has cataract.
 
 
+Training
+-----------
+
+To train the model use script src/models/train_model.py, already trained models is in models folder.
+
 
